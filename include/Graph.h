@@ -1,7 +1,7 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-#include"Node.h"
+#include"Vertex.h"
 
 class Graph{
 private:
