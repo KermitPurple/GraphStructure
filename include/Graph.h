@@ -1,17 +1,15 @@
 #ifndef GRAPH_H
 #define GRAPH_H
 
-#include<iostream>
 #include<utility>
 #include<set>
+#include<map>
 
 
 class Graph{
 private:
-    typedef std::pair<int, int> Edge;
-    std::set<int> vertices;
-    std::set<Edge> edges;
 public:
+    std::map<int, std::set<int>> m;
     void add_vertex(int vertex);
     void add_edge(int v1, int v2);
     Graph();
