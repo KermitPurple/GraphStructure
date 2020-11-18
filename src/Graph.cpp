@@ -3,8 +3,6 @@
 #include<queue>
 #include"Graph.h"
 
-#define LOG(X) std::cout << X;
-
 void Graph::add_vertex(int vertex){ // adds a vertex
     m[vertex] = std::set<int>(); // set vertex to be new set
 }
