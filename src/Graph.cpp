@@ -2,9 +2,6 @@
 #include<stack>
 #include"Graph.h"
 
-Graph::Graph(){
-}
-
 void Graph::add_vertex(int vertex){ // adds a vertex
     m[vertex] = std::set<int>(); // set vertex to be new set
 }

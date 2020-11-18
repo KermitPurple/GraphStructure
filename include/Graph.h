@@ -17,7 +17,6 @@ public:
     Does not do anything if one or both of the verticies do not exist in m already
     void DFS(int start); // Depth First Search\
     go through all of the points and print the path
-    Graph();
 };
 
 #endif // GRAPH_H
