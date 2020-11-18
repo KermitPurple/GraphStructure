@@ -12,6 +12,7 @@ public:
     std::map<int, std::set<int>> m;
     void add_vertex(int vertex);
     void add_edge(int v1, int v2);
+    void DFS(int start);
     Graph();
 };
 

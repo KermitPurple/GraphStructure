@@ -25,5 +25,6 @@ int main(){
     g.add_edge(3, 5);
     g.add_edge(4, 5);
     print_map(g.m);
+    g.DFS(1);
     return 0;
 }
