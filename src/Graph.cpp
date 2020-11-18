@@ -24,14 +24,13 @@ void Graph::DFS(int start){ // Depth First Search
         if(visited.insert(start).second) // insert and if inserts
             s.push(start); // push value to stack
         bool moved = false; // if the vertex has moved
-        for(auto i:m[start]){ // cycle through start's set
+        for(auto i:m[start]) // cycle through start's set
             if(!visited.count(i)){ // if i isn't in visited
                 start = i; // set start to new i
                 std::cout << ", " << start; // print new value
                 moved = true; // set moved to true
                 break; // exit for loop
             }
-        }
         if(!moved){ // if vertex hasn't moved
             start = s.top(); // get the top value of the stack
             s.pop(); // remove the top value of the stack
@@ -46,10 +45,9 @@ void Graph::BFS(int start){ // Depth First Search
     std::set<int> visited = {start}; // set of all visited vertices
     std::queue<int> q; // stack to store previous moves
     while(1){ // loop
-        for(auto i:m[start]){ // cycle through start's set
+        for(auto i:m[start]) // cycle through start's set
             if(visited.insert(i).second) // insert and if inserts
                 q.push(i); // push to queue
-        }
         if(q.empty()) // if the queue is empty
             break; // exit loop
         start = q.front(); // get the front value
