@@ -37,3 +37,12 @@ void Graph::DFS(int start){ // Depth First Search
         }
     }
 }
+
+void Graph::print(){
+    for(auto i:m){
+        std::cout << i.first << ": ";
+        for(auto j: i.second)
+            std::cout << j << " ";
+        std::cout << std::endl;
+    }
+}
