@@ -4,7 +4,7 @@
 #include"Graph.h"
 
 void Graph::add_vertex(int vertex){ // adds a vertex
-    m[vertex] = std::set<int>(); // set vertex to be new set
+    m.insert(make_pair(vertex, std::set<int>())); // add the new vertex into the map with a blank set as its value
 }
 
 void Graph::add_edge(int v1, int v2){ // add a connection between two verticies
