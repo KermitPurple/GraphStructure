@@ -28,7 +28,6 @@ int main(){
     gc.add_vertex('D');
     gc.add_vertex('E');
     gc.add_vertex('F');
-    gc.print();
     gc.add_edge('A', 'B');
     gc.add_edge('B', 'C');
     gc.add_edge('C', 'D');
