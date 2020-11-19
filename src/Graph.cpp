@@ -3,21 +3,24 @@
 #include<queue>
 #include"Graph.h"
 
-void Graph::add_vertex(int vertex){ // adds a vertex
-    m.insert(make_pair(vertex, std::set<int>())); // add the new vertex into the map with a blank set as its value
+template<class T>
+void Graph<T>::add_vertex(T const& vertex){ // adds a vertex
+    m.insert(make_pair(vertex, std::set<T>())); // add the new vertex into the map with a blank set as its value
 }
 
-void Graph::add_edge(int v1, int v2){ // add a connection between two verticies
+template<class T>
+void Graph<T>::add_edge(T const& v1, T const& v2){ // add a connection between two verticies
     if(!m.count(v1) || !m.count(v2)) // if either of the vertices doesn't exist
         return; // exit function
     m[v1].insert(v2); // add v2 to v1's set
     m[v2].insert(v1); // add v1 to v2's set
 }
 
-void Graph::DFS(int start){ // Depth First Search
+template<class T>
+void Graph<T>::DFS(T start){ // Depth First Search
     std::cout << start; // print start
-    std::set<int> visited; // set of all visited vertices
-    std::stack<int> s; // stack to store previous moves
+    std::set<T> visited; // set of all visited vertices
+    std::stack<T> s; // stack to store previous moves
     while(1){ // loop
         if(visited.insert(start).second) // insert and if inserts
             s.push(start); // push value to stack
@@ -38,10 +41,11 @@ void Graph::DFS(int start){ // Depth First Search
     }
 }
 
-void Graph::BFS(int start){ // Depth First Search
+template<class T>
+void Graph<T>::BFS(T start){ // Depth First Search
     std::cout << start; // print start
-    std::set<int> visited = {start}; // set of all visited vertices
-    std::queue<int> q; // stack to store previous moves
+    std::set<T> visited = {start}; // set of all visited vertices
+    std::queue<T> q; // stack to store previous moves
     while(1){ // loop
         for(auto i:m[start]) // cycle through start's set
             if(visited.insert(i).second) // insert and if inserts
@@ -54,8 +58,8 @@ void Graph::BFS(int start){ // Depth First Search
     }
 }
 
-
-void Graph::print(){
+template<class T>
+void Graph<T>::print(){
     for(auto i:m){
         std::cout << i.first << ": ";
         for(auto j: i.second)

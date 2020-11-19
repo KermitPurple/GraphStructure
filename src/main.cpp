@@ -2,7 +2,7 @@
 #include"Graph.h"
 
 int main(){
-    Graph g;
+    Graph<int> g;
     g.add_vertex(1);
     g.add_vertex(2);
     g.add_vertex(3);
